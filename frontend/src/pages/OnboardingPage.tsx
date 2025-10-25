@@ -35,10 +35,10 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 
-import Loggo from '../assets/loggo.png';
+import Loggo from '../assets/logo.png';
 import SkillBridgeABI from '../abi/SkillBridge.json';
 
-const contractAddress = '0xe31FA6A58E4D42e1F1e625BD6577936832bd1468'; // <--- REPLACE THIS
+const contractAddress = '0x62D61B40CD9C7a00ed6c80118fEC082da83726b8';
 
 const skillCategoryEnum: { [key: string]: number } = {
   WebDevelopment: 0,
@@ -67,8 +67,8 @@ const workTypeEnum: { [key: string]: number } = {
 };
 
 const userTypeEnum: { [key: string]: number } = {
-  ServiceProvider: 0,
-  Client: 1,
+  ServiceProvider: 1,
+  Client: 0,
 };
 
 const skillCategories = [
@@ -208,7 +208,7 @@ const OnboardingPage: React.FC = () => {
       abi: SkillBridgeABI,
       functionName: 'registerUser',
       args,
-      gas: 500000n,
+      gas: 800000n,
     });
   };
 
@@ -418,7 +418,7 @@ const OnboardingPage: React.FC = () => {
                       <input
                         type="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value.trim() })}
                         placeholder="Enter your email address"
                         className="w-full pl-12 pr-4 py-4 rounded-xl border-2 border-gray-200 focus:border-indigo-500 focus:outline-none transition-all duration-200 text-lg bg-gray-50 focus:bg-white"
                       />

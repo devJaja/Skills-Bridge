@@ -1,6 +1,6 @@
 import { createAppKit } from '@reown/appkit/react'
 import { WagmiProvider } from 'wagmi'
-import { sepolia, type AppKitNetwork } from '@reown/appkit/networks'
+import { baseSepolia, type AppKitNetwork } from '@reown/appkit/networks'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 
@@ -17,8 +17,8 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
-// 3. Use Sepolia for dev/test
-const networks: [AppKitNetwork, ...AppKitNetwork[]] = [sepolia]
+// 3. Use Base Sepolia for dev/test
+const networks: [AppKitNetwork, ...AppKitNetwork[]] = [baseSepolia]
 
 // 4. Wagmi Adapter
 const wagmiAdapter = new WagmiAdapter({

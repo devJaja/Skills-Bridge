@@ -65,6 +65,7 @@ const PostJobPage: React.FC = () => {
         abi,
         functionName: 'postJobListing',
         args: [title, description, budgetInWei, deadlineTimestamp],
+        gas: 5000000n,
       });
       setTxHash(hash);
       setTransactionStatus('confirming');

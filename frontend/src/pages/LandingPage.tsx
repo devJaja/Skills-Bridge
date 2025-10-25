@@ -1,5 +1,3 @@
-import React from 'react';
-// import Header from "../components/Header"
 import CTA from "../components/CTA"
 import Feature from "../components/Features"
 import Hero from "../components/Hero"

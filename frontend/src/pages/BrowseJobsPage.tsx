@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAccount, useReadContract } from 'wagmi';
 import abi from '../abi/SkillBridge.json';
-import { Briefcase, DollarSign, Calendar, MapPin, Tag, Clock } from 'lucide-react';
+import { Briefcase, DollarSign, Calendar,} from 'lucide-react';
 
 interface JobListing {
   id: bigint;

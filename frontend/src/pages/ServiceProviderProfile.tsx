@@ -6,20 +6,12 @@ import {
   Briefcase,
   Settings,
   Edit3,
-  Plus,
-  Eye,
   Calendar,
   DollarSign,
-  Users,
   Star,
-  Heart,
   MessageCircle,
-  Filter,
   Search,
-  MoreVertical,
   Clock,
-  CheckCircle,
-  AlertCircle,
   Monitor,
   Building,
   Globe,
@@ -39,10 +31,8 @@ import {
   Megaphone,
   Scale,
   Calculator,
-  Award,
   TrendingUp,
-  FileText,
-  Loader
+  FileText
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -86,18 +76,18 @@ const ServiceProviderProfile: React.FC = () => {
     workType: formData.workType,
     skillCategories: formData.skillCategories,
     userType: 'ServiceProvider',
-    joinedDate: "2024-12-10", // This data is not on chain
+    joinedDate: "2024-12-10", 
     profileImage: null,
-    title: "Full-Stack Developer & Blockchain Expert", // This data is not on chain
-    bio: "Experienced full-stack developer with 8+ years building scalable web applications and blockchain solutions. Passionate about creating innovative digital products that solve real-world problems.", // This data is not on chain
-    hourlyRate: 85, // This data is not on chain
-    totalJobsCompleted: 0, // This data is not on chain
-    activeJobs: 0, // This data is not on chain
-    totalEarned: 0, // This data is not on chain
-    averageRating: 0, // This data is not on chain
-    responseTime: "N/A", // This data is not on chain
-    completionRate: 100, // This data is not on chain
-    memberSince: "December 2024" // This data is not on chain
+    title: "Full-Stack Developer & Blockchain Expert", 
+    bio: "Experienced full-stack developer with 8+ years building scalable web applications and blockchain solutions. Passionate about creating innovative digital products that solve real-world problems.",
+    hourlyRate: 85,
+    totalJobsCompleted: 0, 
+    activeJobs: 0, 
+    totalEarned: 0, 
+    averageRating: 0, 
+    responseTime: "N/A", 
+    completionRate: 100, 
+    memberSince: "December 2024" 
   } : null;
 
   if (!providerData) {
@@ -120,32 +110,7 @@ const ServiceProviderProfile: React.FC = () => {
     }).format(amount);
   };
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
 
-  const getJobStatusIcon = (status: string) => {
-    switch (status) {
-      case 'InProgress': return <Clock className="w-4 h-4 text-blue-500" />;
-      case 'Completed': return <CheckCircle className="w-4 h-4 text-green-500" />;
-      case 'Funded': return <DollarSign className="w-4 h-4 text-yellow-500" />;
-      default: return <Clock className="w-4 h-4 text-gray-500" />;
-    }
-  };
-
-  const getProposalStatusColor = (status: string) => {
-    switch (status) {
-      case 'pending': return 'bg-yellow-100 text-yellow-700';
-      case 'shortlisted': return 'bg-blue-100 text-blue-700';
-      case 'accepted': return 'bg-green-100 text-green-700';
-      case 'rejected': return 'bg-red-100 text-red-700';
-      default: return 'bg-gray-100 text-gray-700';
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-indigo-50/30">
@@ -174,7 +139,7 @@ const ServiceProviderProfile: React.FC = () => {
                 {/* Profile Image */}
                 <div className="relative">
                   <div className="w-24 h-24 bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto">
-                    {providerData.name.split(' ').map(n => n[0]).join('')}
+                    {providerData.name.split(' ').map((n: string) => n[0]).join('')}
                   </div>
                   <button 
                     onClick={() => setIsEditingProfile(!isEditingProfile)}
@@ -330,7 +295,7 @@ const ServiceProviderProfile: React.FC = () => {
                 <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/50">
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Skills & Expertise</h3>
                   <div className="flex flex-wrap gap-3">
-                    {providerData.skillCategories.map((skillId) => {
+                    {providerData.skillCategories.map((skillId: string) => {
                       const skill = skillCategories[skillId as keyof typeof skillCategories];
                       return (
                         <div key={skillId} className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-xl border border-gray-200">

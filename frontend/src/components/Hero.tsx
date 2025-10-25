@@ -24,11 +24,11 @@ const Hero: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center justify-center w-40 h-40 mt-4 rounded-3xl shadow-2xl bg-white/80 border border-indigo-100 transform hover:scale-105 transition-all duration-300">
+          <div className="inline-flex items-center justify-center w-42 h-42 mt-4 rounded-3xl shadow-2xl bg-white/80 border border-indigo-100 transform hover:scale-105 transition-all duration-300">
             <img 
               src={Logo} 
-              alt="SkillFlow Logo" 
-              className="w-28 h-28 object-contain" 
+              alt="SkillsBridge Logo" 
+              className="w-30 h-30 object-contain" 
             />
           </div>
         </div>
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 leading-none tracking-tight">
               Bridge Your Skills to{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 animate-gradient">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1C5F75] via-[#2A8FB0] to-[#163E4B] animate-gradient">
                 Success
               </span>
             </h1>
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/onboarding">
-              <button className="group bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-indigo-500/25 hover:-translate-y-2 transition-all duration-300 transform" >
+              <button className="group bg-gradient-to-r from-[#1C5F75] to-[#2A8FB0] text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-[#1C5F75]/30 hover:-translate-y-2 transition-all duration-300 transform" >
                 <span className="flex items-center gap-2">
                   Get Started Free 
                   <div className="w-2 h-2 bg-white rounded-full group-hover:animate-bounce"></div>
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
               </button>
             </Link>
             
-            <button className="group border-2 border-indigo-600 text-indigo-600 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-600 hover:text-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm bg-white/70">
+            <button className="group border-2 border-[#1C5F75] text-[#1C5F75] px-10 py-5 rounded-2xl font-bold text-lg hover:bg-[#1C5F75] hover:text-white hover:shadow-xl hover:shadow-[#1C5F75]/30 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm bg-white/70">
               Browse Categories
             </button>
           </div>

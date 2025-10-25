@@ -43,9 +43,9 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-800 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <div className="flex text-2xl font-bold bg-gradient-to-r from-[#1C5F75] to-[#2A8FB0] bg-clip-text text-transparent">
               <img src={Logo} alt="" className='w-10 h-10'/>
-              SkillBridge
+              Skills-Bridge
             </div>
             <p className="text-gray-400">
               © 2025 SkillBridge. All rights reserved.

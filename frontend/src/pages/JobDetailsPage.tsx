@@ -2,12 +2,12 @@ import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { useWriteContract } from 'wagmi';
 import SkillBridgeABI from '../abi/SkillBridge.json';
-import { DollarSign, Clock, User, ChevronLeft } from 'lucide-react';
+import { Clock, User, ChevronLeft } from 'lucide-react';
 
-const contractAddress = '0xb176F06566c12e4Ee10CeDBA876682F4dF130bBF';
+const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS as `0x${string}`;
 
 const JobDetailsPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  useParams<{ id: string }>();
   const location = useLocation();
   const { job } = location.state || {};
   const { writeContract } = useWriteContract();

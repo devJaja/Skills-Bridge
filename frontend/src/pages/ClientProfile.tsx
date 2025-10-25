@@ -7,19 +7,12 @@ import {
   Settings,
   Edit3,
   Plus,
-  Eye,
   Calendar,
-  DollarSign,
-  Users,
   Star,
   Heart,
   MessageCircle,
-  Filter,
-  Search,
-  MoreVertical,
   Clock,
   CheckCircle,
-  AlertCircle,
   Monitor,
   Building,
   Globe,
@@ -38,8 +31,7 @@ import {
   Target,
   Megaphone,
   Scale,
-  Calculator,
-  Loader
+  Calculator
 } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -83,16 +75,16 @@ const ClientProfile: React.FC = () => {
     workType: formData.workType,
     skillCategories: formData.skillCategories,
     userType: 'Client',
-    joinedDate: "2025-01-15", // This data is not on chain
+    joinedDate: "2025-01-15", 
     profileImage: null,
-    company: "TechStartup Inc.", // This data is not on chain
-    bio: "Entrepreneur and tech startup founder looking to build innovative digital solutions. I'm passionate about creating products that make a difference.", // This data is not on chain
-    totalJobsPosted: 0, // This data is not on chain
-    activeJobs: 0, // This data is not on chain
-    completedJobs: 0, // This data is not on chain
-    totalSpent: 0, // This data is not on chain
-    averageRating: 0, // This data is not on chain
-    memberSince: "January 2025" // This data is not on chain
+    company: "TechStartup Inc.", 
+    bio: "Entrepreneur and tech startup founder looking to build innovative digital solutions. I'm passionate about creating products that make a difference.", 
+    totalJobsPosted: 0, 
+    activeJobs: 0, 
+    completedJobs: 0, 
+    totalSpent: 0, 
+    averageRating: 0, 
+    memberSince: "January 2025" 
   } : null;
 
   if (!clientData) {
@@ -115,22 +107,7 @@ const ClientProfile: React.FC = () => {
     }).format(amount);
   };
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
 
-  const getJobStatusIcon = (status: string) => {
-    switch (status) {
-      case 'active': return <Clock className="w-4 h-4 text-blue-500" />;
-      case 'completed': return <CheckCircle className="w-4 h-4 text-green-500" />;
-      case 'paused': return <AlertCircle className="w-4 h-4 text-yellow-500" />;
-      default: return <Clock className="w-4 h-4 text-gray-500" />;
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-indigo-50/30">
@@ -159,7 +136,7 @@ const ClientProfile: React.FC = () => {
                 {/* Profile Image */}
                 <div className="relative">
                   <div className="w-24 h-24 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto">
-                    {clientData.name.split(' ').map(n => n[0]).join('')}
+                    {clientData.name.split(' ').map((n: string) => n[0]).join('')}
                   </div>
                   <button 
                     onClick={() => setIsEditingProfile(!isEditingProfile)}
@@ -297,7 +274,7 @@ const ClientProfile: React.FC = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Services of Interest</h3>
                   <p className="text-gray-600 mb-6">Based on your onboarding preferences, you're interested in these services:</p>
                   <div className="flex flex-wrap gap-3">
-                    {clientData.skillCategories.map((skillId) => {
+                    {clientData.skillCategories.map((skillId: string) => {
                       const skill = skillCategories[skillId as keyof typeof skillCategories];
                       return (
                         <div key={skillId} className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-xl border border-gray-200">
