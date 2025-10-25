@@ -1,4 +1,5 @@
-🧱 Skills-Bridge
+🧱 Skills-Bridge:-
+
 Skills-Bridge is a decentralized platform that connects skilled professionals — engineers, carpenters, doctors, teachers, developers, artisans, and more — with clients globally using blockchain-powered escrow for trust, transparency, and instant payments.
 Skills-Bridge empowers people to earn fairly, build verifiable on-chain reputations, and access global opportunities — all without intermediaries or exploitative platform fees.
 
